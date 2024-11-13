@@ -12,5 +12,5 @@ spec:
         - name: deutsch
           port: 80
   tls:
-    # secretName: deutsch-live
-    secretName: deutsch
+    secretName: deutsch-live
+    # secretName: deutsch
