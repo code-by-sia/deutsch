@@ -25,7 +25,14 @@ export default function Card({ className, id, value, onChange }) {
     <div className={classNames({ toggled: isToggled }, "card", className)}>
       <section>
         <h1 onClick={toggle}>{id}</h1>
-        <p>{value.desc}</p>
+        <p>
+          {value.desc.split("\n").map((it) => (
+            <>
+              {it}
+              <br />
+            </>
+          ))}
+        </p>
       </section>
 
       <CardToolbar
