@@ -1,0 +1,29 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: deutsch
+  namespace: default
+spec:
+  commonName: deutsch.samalstudios.com
+  secretName: deutsch
+  dnsNames:
+    - deutsch.samalstudios.com
+
+  issuerRef:
+    kind: Issuer
+    name: letsencrypt-staging
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: deutsch-live
+  namespace: default
+spec:
+  commonName: deutsch.samalstudios.com
+  secretName: deutsch-live
+  dnsNames:
+    - deutsch.samalstudios.com
+
+  issuerRef:
+    kind: Issuer
+    name: letsencrypt-prod

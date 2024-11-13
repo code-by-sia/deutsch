@@ -1,0 +1,51 @@
+div.card {
+    @apply flex flex-col;
+
+    section {
+        @apply flex flex-col flex-1 p-3 bg-white rounded-t-xl shadow hover:shadow-lg cursor-pointer;
+
+        h1 {
+            @apply text-xl text-center font-light mb-3;
+        }
+
+        p {
+            @apply hidden;
+        }
+    }
+
+    &.toggled {
+        p {
+            @apply flex;
+        }
+    }
+
+    div.card-toolbar {
+        @apply flex rounded-b-xl items-center p-2 bg-white;
+        button,
+        span {
+            @apply invisible;
+        }
+    }
+    &:hover {
+        div.card-toolbar {
+            @apply border-t border-dashed shadow;
+            button,
+            span {
+                @apply visible;
+            }
+        }
+    }
+}
+div.card-toolbar {
+    @apply flex justify-between items-center font-light text-lg;
+
+    button {
+        @apply size-8 flex items-center justify-center;
+        &.plus {
+            @apply bg-teal-50 text-teal-900;
+        }
+        &.minus {
+            @apply bg-red-50 text-red-900;
+        }
+    }
+}
