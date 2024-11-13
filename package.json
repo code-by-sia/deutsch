@@ -13,7 +13,7 @@
     "start": "parcel --no-cache --dist-dir=docs",
     "watch": "parcel watch",
     "clean": "rm docs/*",
-    "build": "parcel build"
+    "build": "parcel build --dist-dir=docs --no-source-maps"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "2.10.3",
