@@ -1,0 +1,14 @@
+.stats-info {
+    @apply flex gap-3 w-full sm:w-auto bg-white p-3 shadow border-t sm:border sm:rounded-xl hover:shadow-xl;
+
+    .missed {
+        @apply text-red-700;
+    }
+    .pending {
+        @apply text-gray-700;
+    }
+
+    .passed {
+        @apply text-teal-700;
+    }
+}

@@ -1,4 +1,4 @@
-import react, { useState, useCallback, useEffect } from "react";
+import react, { useState, useCallback, useMemo, useEffect } from "react";
 import data from "../data/index";
 
 function changeScore(id, x, n) {
@@ -34,10 +34,24 @@ export default function useVocab() {
     [load],
   );
 
+  const stats = useMemo(
+    () =>
+      vocab.reduce(
+        (p, c) => ({
+          passed: p.passed + (c.value.score > 0 ? 1 : 0),
+          pending: p.pending + (c.value.score === 0 ? 1 : 0),
+          missed: p.missed + (c.value.score < 0 ? 1 : 0),
+        }),
+        { passed: 0, pending: 0, missed: 0 },
+      ),
+    [vocab],
+  );
+
   useEffect(() => load(), [load]);
 
   return {
     vocab,
+    stats,
     change,
   };
 }

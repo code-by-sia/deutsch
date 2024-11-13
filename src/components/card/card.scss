@@ -26,12 +26,34 @@ div.card {
             @apply invisible;
         }
     }
-    &:hover {
+    &:hover,
+    &.large {
         div.card-toolbar {
             @apply border-t border-dashed shadow;
             button,
             span {
                 @apply visible;
+            }
+        }
+    }
+
+    &.large {
+        @apply flex-1 shadow-sm border overflow-hidden rounded-xl;
+        section {
+            @apply flex items-center justify-center;
+            h1 {
+                @apply text-4xl sm:text-8xl sm:py-6;
+            }
+
+            p {
+                @apply text-2xl font-light p-3 sm:text-4xl;
+            }
+        }
+
+        div.card-toolbar {
+            @apply text-5xl font-extralight;
+            button {
+                @apply size-16 text-3xl sm:size-64 sm:text-4xl;
             }
         }
     }

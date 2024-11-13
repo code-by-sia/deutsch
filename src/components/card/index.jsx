@@ -18,12 +18,13 @@ function CardToolbar({ index, score = 0, onChange }) {
   );
 }
 
-export default function Card({ id, value, onChange }) {
+export default function Card({ className, id, value, onChange }) {
   const [isToggled, toggle] = useToggleState();
+  if (!id || !value) return <></>;
   return (
-    <div className={classNames({ toggled: isToggled }, "card")}>
-      <section onClick={toggle}>
-        <h1>{id}</h1>
+    <div className={classNames({ toggled: isToggled }, "card", className)}>
+      <section>
+        <h1 onClick={toggle}>{id}</h1>
         <p>{value.desc}</p>
       </section>
 
