@@ -1,0 +1,23 @@
+label.toggle-switch {
+    @apply flex  items-center cursor-pointer my-1;
+    span {
+        @apply pe-3;
+    }
+    input[type="checkbox"] {
+        @apply sr-only;
+
+        &:checked {
+            & ~ div {
+                @apply bg-indigo-500 after:translate-x-full rtl:after:-translate-x-full after:border-white;
+            }
+        }
+    }
+
+    & > div {
+        @apply relative w-9 h-5 bg-gray-200;
+        @apply rounded-full;
+        @apply after:content-[''] after:absolute after:top-[2px] after:start-[2px];
+        @apply after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4;
+        @apply after:transition-all dark:border-gray-600;
+    }
+}

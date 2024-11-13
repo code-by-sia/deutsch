@@ -1,8 +1,12 @@
 div.practice-page {
     @apply flex flex-col gap-3 sm:p-6 flex-1 h-screen;
 
-    & > footer {
-        @apply fixed flex gap-3 top-0  w-full sm:w-auto sm:my-3 sm:mx-8;
+    & > header {
+        @apply fixed flex gap-3 top-0 w-full sm:w-auto sm:my-3 sm:mx-8;
+
+        div.filters {
+            @apply flex gap-2 p-3 bg-white border rounded-xl shadow;
+        }
     }
     & > section {
         @apply flex;
