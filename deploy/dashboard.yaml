@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: deutsch
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`deutsch.samalstudios.com`)
+      kind: Rule
+      middlewares:
+        - name: deutsch-dashboard-basicauth
+      services:
+        - name: deutsch
+          port: 80
+  tls:
+    secretName: deutsch-live
+    # secretName: deutsch

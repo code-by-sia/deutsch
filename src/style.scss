@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.page {
+  @apply flex bg-neutral-100 w-screen h-screen overflow-auto;
+}
+
+button {
+  &.action {
+    @apply bg-white px-4 py-2 shadow font-semibold hover:shadow-sm hover:bg-neutral-100 active:bg-neutral-200 active:shadow-lg;
+  }
+
+  @apply flex rounded;
+}
+
+input {
+  &.search {
+    @apply w-full p-1 px-3 rounded-lg border shadow-sm active:shadow-lg;
+  }
+}
+
+.toolbar {
+  @apply flex bg-teal-700 p-3 border-b;
+}
+
+.content {
+  @apply flex flex-wrap flex-1 w-full;
+}
+
+span.divider {
+  @apply flex-1;
+}
