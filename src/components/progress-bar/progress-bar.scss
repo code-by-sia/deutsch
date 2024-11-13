@@ -1,0 +1,17 @@
+div.progress-bar {
+    @apply flex flex-col bg-white shadow p-3;
+
+    i {
+        @apply flex p-1 overflow-hidden text-xs justify-center flex;
+
+        &.passed {
+            @apply bg-teal-500;
+        }
+        &.pending {
+            @apply bg-neutral-400;
+        }
+        &.missed {
+            @apply bg-red-600;
+        }
+    }
+}
